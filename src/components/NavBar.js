@@ -10,7 +10,7 @@ class NavBar extends Component {
         return ( 
             <ul className="nav">
                 <li className="nav-item">
-                    <Link to="/" className="nav-link active">Main</Link>
+                    <Link to="/main" className="nav-link active">Main</Link>
                 </li>
                 <li className="nav-item">
                     <Link to="/meat" className="nav-link">Meat</Link>

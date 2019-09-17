@@ -20,6 +20,7 @@ import managerReducer from './reducers/managerReducers';
 // 4. actually create the store (2) by passing it the managerReducer (3) which is made up of the individual reducers
 
 const hMart = createStore(managerReducer);
+// WE MADE A STORE HERE!!! ^^^
 
 // Prover (1) is the component that glues REact and Redux together
 // We hand the Provider to REactDom.render,
@@ -27,7 +28,7 @@ const hMart = createStore(managerReducer);
 
 
 ReactDOM.render(
-    <Provider store={hMart} >
+    <Provider store={hMart}>
         <App/>
     </Provider>,
     document.getElementById('root')

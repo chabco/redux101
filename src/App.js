@@ -12,9 +12,9 @@ function App(){
 			<h1>Welcome to H Mart lol.</h1>
 			<Route path='/' component={NavBar}/>
 			<Route exact path='/main' component={Main} />
+			<Route exact path='/meat' component={MeatDept} />
 			<Route exact path='/dairy' component={DairyDept} />
 			<Route exact path='/frozen' component={FrozenDept} />
-			<Route exact path='/meat' component={MeatDept} />
 		</Router>
 	)
 }

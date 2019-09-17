@@ -21,7 +21,8 @@ const seedData = [
     }
 ]
 
-export default (state = [], action) => {
+export default (state = seedData, action) => {
     console.log("Meat Reducer is running!");
+    console.log(action.type);
     return state;
 }
