@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import updateFrozen from '../actions/frozenInvUpdate'
 // in order for updateFrom to be an action creator, we need to import..
 import { bindActionCreators } from 'redux';
+import AddItem from './AddItems';
 
 
 class FrozenDept extends Component {
@@ -13,15 +14,39 @@ class FrozenDept extends Component {
     }
 
     componentDidMount(){
-        this.props.updateFrozen([{}]);
+        // this.props.updateFrozen([]);
+    }
+
+    changeQuantity = (operation, indexToChange) => {
+        console.log(operation, indexToChange);
+        this.props.updateFrozen(operation, indexToChange);
     }
 
     render() { 
         console.log(this.props.frozenData)
         return (
+
         <ul>
+            <AddItem dept="Frozen"/>
             <h1>Frozen component here!</h1>
-            {this.props.frozenData.map((i, j) => { return <li key={j}>{i.food}: {i.quantity}</li> })}
+            {this.props.frozenData.map((i, j) => { return( 
+
+            <div key={j}>
+                <li>{i.food}: {i.quantity}</li>
+    
+    
+                <input className="add-button" type="button" onClick={()=>{this.changeQuantity('+', j)}} value="+"/>
+    
+    
+                <input className="add-button" type="button" onClick={()=>{this.changeQuantity('-', j)}} value="-"/> 
+            </div>
+                
+                    )
+                }
+            )
+        }
+
+
         </ul>
         );
     }
